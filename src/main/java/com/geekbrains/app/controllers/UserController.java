@@ -3,7 +3,6 @@ package com.geekbrains.app.controllers;
 import com.geekbrains.app.services.UserService;
 import com.geekbrains.app.entities.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +33,7 @@ public class UserController {
         User user = userService.findByUsername(principal.getName()).orElseThrow(() -> new RuntimeException("Unable to find user by username: " + principal.getName()));
         return "Вы вошли как: " + user.getUsername() + " Ваша почта: " + user.getEmail();
     }
+
     //доступ авторизированным пользователям с WRITE_ACCESS
     @GetMapping("/write")
     public String writePage() {
@@ -51,6 +51,5 @@ public class UserController {
     public String adminPage() {
         return "Панель управления Администратора: Имеется доступ на удаление постов";
     }
-
 
 }
