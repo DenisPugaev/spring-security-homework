@@ -23,6 +23,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
+
     @ManyToMany
     @JoinTable(name = "users_authorities",
             joinColumns = @JoinColumn(name = "user_id"),

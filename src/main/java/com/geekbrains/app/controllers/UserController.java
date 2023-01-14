@@ -21,7 +21,6 @@ public class UserController {
         return "Добро пожаловать на домашнюю страницу 'Постграмм'";
     }
 
-
     @GetMapping("/auth_page/")
     public String authPage() {
         return "авторизация";
@@ -51,5 +50,4 @@ public class UserController {
     public String adminPage() {
         return "Панель управления Администратора: Имеется доступ на удаление постов";
     }
-
 }
